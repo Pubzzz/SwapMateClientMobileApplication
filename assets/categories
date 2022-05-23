@@ -1,0 +1,30 @@
+{
+  "mens": [
+    {
+      "name": "Groom's Wear",
+      "key": "Men's Groom Wear"
+    },
+    {
+      "name": "T-Shirt",
+      "key": "Men's T-Shirt"
+    },
+    {
+      "name": "Shirt",
+      "key": "Men's Shirt"
+    },
+    {
+      "name": "Office Trouser",
+      "key": "Men's Office Trouser"
+    },
+    {
+      "name": "Short",
+      "key": "Men's Short"
+    },
+    {
+      "name": "Denim",
+      "key": "Men's Denim"
+    }
+  ],
+  "ladies": [],
+  "kids": []
+}
