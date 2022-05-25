@@ -10,21 +10,24 @@ class UserRepository extends FirebaseRepository<User> {
   @override
   User fromSnapshot(DocumentSnapshot<Map<String, dynamic>> snapshot,
       SnapshotOptions? options) {
+
     final data = snapshot.data()!;
 
     return User(
-        ref: snapshot.reference,
-        nic: data['nic'] ?? "",
-        email: data['email'] ?? '',
-        address: data['address'] ?? '',
-        age: data['age'],
-        contact: data['contact'] ?? '',
-        firstname: data['firstname'] ?? '',
-        gender: data['gender'] ?? '',
-        lastname: data['lastname'] ?? '',
-        points: data['points'] ?? '',
-        size: data['size'] ?? '',
-        isProfileCompleted: data['isProfileCompleted'] ?? false);
+      ref: snapshot.reference,
+      nic: data['nic'] ?? "",
+      email: data['email'] ?? '',
+      address: data['address'] ?? '',
+      age: data['age'],
+      contact: data['contact'] ?? '',
+      firstname: data['firstname'] ?? '',
+      gender: data['gender'] ?? '',
+      lastname: data['lastname'] ?? '',
+      points: data['points'] ?? '',
+      size: data['size'] ?? '',
+      profileImg: data['profileImg'] ?? '',
+      isProfileCompleted: data['isProfileCompleted'] ?? false
+    );
   }
 
   @override
@@ -40,7 +43,9 @@ class UserRepository extends FirebaseRepository<User> {
       'lastname': value.lastname,
       'points': value.points,
       'size': value.size,
-      'isProfileCompleted': false,
+      'profileImg':value.profileImg,
+      'isProfileCompleted':false,
+
     };
   }
 

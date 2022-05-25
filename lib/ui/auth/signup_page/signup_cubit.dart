@@ -180,9 +180,10 @@ class SignUpCubit extends Cubit<SignUpState> {
             final user = r.User(
               isProfileCompleted: false,
               email: userCredential.user!.email,
+              profileImg: userCredential.user!.photoURL ?? '',
               firstname: data['name'] ?? '',
               points: '0',
-              regdate: formattedDate
+              regdate: formattedDate,
             );
 
             await userRepo.add(
@@ -248,4 +249,5 @@ class SignUpCubit extends Cubit<SignUpState> {
     emit(state.clone(error: ''));
     emit(state.clone(error: error));
   }
+
 }

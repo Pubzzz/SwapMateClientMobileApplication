@@ -1,18 +1,14 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:swap_mate_mobile/util/routes.dart';
 import 'package:swap_mate_mobile/ui/orders_page/orders_view.dart';
 import 'package:swap_mate_mobile/ui/root_page/root_cubit.dart';
 import 'package:swap_mate_mobile/ui/root_page/root_state.dart';
 import 'package:swap_mate_mobile/ui/user_management_page/user_management_provider.dart';
-import 'add_new_profile_page/add_new_profile_provider.dart';
-import 'user_management_page/user_management_view.dart';
-import 'add_new_profile_page/add_profile_view.dart';
+import 'package:swap_mate_mobile/util/routes.dart';
+
 import '../theme/app_colors.dart';
-import 'auth/login_page/login.dart';
+import 'add_new_profile_page/add_new_profile_provider.dart';
 
 class DrawerMenu extends StatefulWidget {
   const DrawerMenu({Key? key}) : super(key: key);
@@ -62,10 +58,10 @@ class _DrawerMenuState extends State<DrawerMenu> {
                   ),
                   currentAccountPicture: CircleAvatar(
                     child: ClipOval(
-                      child: Image.asset(
+                      child: user.profileImg!.isEmpty?Image.asset(
                         "assets/images/pp.png",
                         fit: BoxFit.cover,
-                      ),
+                      ):Image.network('${user.profileImg}'),
                     ),
                   ),
                   decoration: const BoxDecoration(
@@ -75,6 +71,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                       //sample cover photo
                       image: AssetImage("assets/images/cover2.jpg"),
                     ),
+
                   ),
                 ),
                 ListTile(
@@ -166,6 +163,8 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 ),
               ],
             );
+
+
           }),
     );
   }

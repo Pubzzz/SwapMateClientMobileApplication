@@ -12,7 +12,11 @@ class LoginState {
     required this.processing,
   });
 
-  LoginState clone({String? error, String? email, bool? processing}) {
+  LoginState clone({
+    String? error,
+    String? email,
+    bool? processing,
+  }) {
     return LoginState(
       error: error ?? this.error,
       email: email ?? this.email,

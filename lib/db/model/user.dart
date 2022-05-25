@@ -15,6 +15,7 @@ class User extends DBModel {
   String? size;
   String? regdate;
   bool isProfileCompleted;
+  String? profileImg;
 
   User({
     DocumentReference? ref,
@@ -29,25 +30,27 @@ class User extends DBModel {
     this.points,
     this.size,
     this.regdate,
+    this.profileImg,
     required this.isProfileCompleted,
   }) : super(ref: ref);
 
   @override
   User clone() {
     return User(
-        ref: ref,
-        email: email,
-        address: address,
-        age: age,
-        contact: contact,
-        firstname: firstname,
-        lastname: lastname,
-        gender: gender,
-        nic: nic,
-        points: points,
-        size: size,
-        isProfileCompleted: isProfileCompleted,
-      regdate: regdate
+      ref: ref,
+      email: email,
+      address: address,
+      age: age,
+      contact: contact,
+      firstname: firstname,
+      lastname: lastname,
+      gender: gender,
+      nic: nic,
+      points: points,
+      size: size,
+      isProfileCompleted: isProfileCompleted,
+      regdate: regdate,
+      profileImg: profileImg,
     );
   }
 }
